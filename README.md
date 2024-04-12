@@ -67,17 +67,17 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement add function in Notification repository.`
     -   [x] Commit: `Implement list_all_as_string function in Notification repository.`
     -   [x] Write answers of your learning module's "Reflection Subscriber-1" questions in this README.
--   **STAGE 3: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Commit: `Implement receive_notification function in Notification service.`
-    -   [ ] Commit: `Implement receive function in Notification controller.`
-    -   [ ] Commit: `Implement list_messages function in Notification service.`
-    -   [ ] Commit: `Implement list function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Subscriber-2" questions in this README.
+-   **STAGE 2: Implement services and controllers**
+    -   [x] Commit: `Create Notification service struct skeleton.`
+    -   [x] Commit: `Implement subscribe function in Notification service.`
+    -   [x] Commit: `Implement subscribe function in Notification controller.`
+    -   [x] Commit: `Implement unsubscribe function in Notification service.`
+    -   [x] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [x] Commit: `Implement receive_notification function in Notification service.`
+    -   [x] Commit: `Implement receive function in Notification controller.`
+    -   [x] Commit: `Implement list_messages function in Notification service.`
+    -   [x] Commit: `Implement list function in Notification controller.`
+    -   [x] Write answers of your learning module's "Reflection Subscriber-2" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -90,3 +90,8 @@ This is the place for you to write reflections:
 2. Variabel static dalam Rust secara default tidak dapat diubah, menjaga keamanan thread. Berbeda dengan Java, Rust memastikan variabel static bersifat immutable untuk mencegah race condition. Untuk mengatasi ini, Rust menggunakan lazy static yang memungkinkan definisi variabel static yang mutable dengan aman menggunakan mekanisme seperti Muted atau RwLock, yang mengelola akses ke variabel tersebut. Lazy static memungkinkan penggunaan variabel static dengan cara yang mirip dengan Java, namun tetap aman sesuai dengan model konkurensi Rust.
 
 #### Reflection Subscriber-2
+1. Sudah, dalam src/lib.rs terdapat elemen penting seperti inisialisasi variabel static di lazy_static (seperti REQWEST_CLIENT dan APP_CONFIG) serta fungsi compose_error_response untuk pesan error kustom. Informasi yang diperlukan untuk aplikasi, seperti manajemen error dengan Error sebagai default untuk tipe Result dan ErrorResponse untuk respons kesalahan, juga telah disediakan.
+
+2. Observer pattern memudahkan penambahan atau penyesuaian subscriber dengan cara mendaftarkan mereka menggunakan metode subscribe, kemudian memasukkan mereka ke dalam daftar subscribers. Ketika ada subscriber baru yang berlangganan, mereka akan ditambahkan ke dalam daftar observer. Misalnya, jika instance dari Main app di spawn, tidak akan ada masalah karena proses pendaftaran subscriber akan disesuaikan dengan API yang relevan.
+
+3. Sudah, Postman dapat menjadi alat yang sangat berguna dalam proses pengujian, memungkinkan saya untuk mengirimkan permintaan HTTP dan memverifikasi apakah respons yang diterima sesuai dengan harapan. Dengan menggunakan Postman collection, saya dapat dengan mudah mengatur data yang dikirimkan dalam permintaan HTTP dan memastikan bahwa program memberikan respons yang benar. Keuntungan utamanya adalah kemampuan untuk menguji API tanpa harus menggunakan data aktual dari aplikasi terkait, yang tentunya mempermudah proses pengembangan dan pengujian.
